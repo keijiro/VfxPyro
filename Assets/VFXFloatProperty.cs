@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Pyro
 {
-    public class VFXFloatParameter : MonoBehaviour
+    public class VFXFloatProperty : MonoBehaviour
     {
         public float value {
             get { return _value; }

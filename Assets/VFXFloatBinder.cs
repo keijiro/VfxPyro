@@ -1,31 +1,31 @@
 using UnityEngine;
-using UnityEngine.Experimental.VFX;
-using UnityEngine.Experimental.VFX.Utility;
+using UnityEngine.VFX;
+using UnityEngine.VFX.Utility;
 
 namespace Pyro
 {
-    [VFXBinder("Utility/Float Parameter")]
+    [VFXBinder("Utility/Float Property")]
     public class VFXFloatBinder : VFXBinderBase
     {
-        public string Parameter { get { return (string)m_Parameter; } set { m_Parameter = value; } }
+        public string Property { get { return (string)m_Property; } set { m_Property = value; } }
 
-        [VFXParameterBinding("System.Single"), SerializeField]
-        protected ExposedParameter m_Parameter = "FloatParameter";
-        public VFXFloatParameter Target;
+        [VFXPropertyBinding("System.Single"), SerializeField]
+        protected ExposedProperty m_Property = "FloatProperty";
+        public VFXFloatProperty Target;
 
         public override bool IsValid(VisualEffect component)
         {
-            return Target != null && component.HasFloat(m_Parameter);
+            return Target != null && component.HasFloat(m_Property);
         }
 
         public override void UpdateBinding(VisualEffect component)
         {
-            component.SetFloat(m_Parameter, Target.value);
+            component.SetFloat(m_Property, Target.value);
         }
 
         public override string ToString()
         {
-            return string.Format("Float Parameter : '{0}' -> {1}", m_Parameter, Target == null ? "(null)" : Target.name);
+            return string.Format("Float Property : '{0}' -> {1}", m_Property, Target == null ? "(null)" : Target.name);
         }
     }
 }
