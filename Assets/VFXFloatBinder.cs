@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Experimental.VFX;
 using UnityEngine.Experimental.VFX.Utility;
 
-namespace Dxft
+namespace Pyro
 {
     [VFXBinder("Utility/Float Parameter")]
     public class VFXFloatBinder : VFXBinderBase

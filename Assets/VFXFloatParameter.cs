@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Dxft
+namespace Pyro
 {
     public class VFXFloatParameter : MonoBehaviour
     {
